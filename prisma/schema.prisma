@@ -1,0 +1,110 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "./generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+
+model User {
+  id       String @id @default(cuid())
+  name     String
+  email    String @unique
+  password String
+
+  reviews       Review[]
+  savedColleges SavedCollege[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+model College {
+  id String @id @default(cuid())
+
+  name     String
+  location String
+  state    String
+
+  fees            Int
+  rating          Float
+  placementRate   Float
+  averagePackage  Int
+  description     String @db.Text
+
+  courses Course[]
+  reviews Review[]
+  savedBy SavedCollege[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([name])
+  @@index([state])
+  @@index([rating])
+  @@index([fees])
+
+  @@map("colleges")
+}
+
+model Course {
+  id String @id @default(cuid())
+
+  name     String
+  duration String
+  fees     Int
+
+  collegeId String
+  college   College @relation(fields: [collegeId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([collegeId])
+
+  @@map("courses")
+}
+
+model Review {
+  id String @id @default(cuid())
+
+  rating Float
+  comment String @db.Text
+
+  userId    String
+  collegeId String
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  college College @relation(fields: [collegeId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([collegeId])
+
+  @@map("reviews")
+}
+
+model SavedCollege {
+  userId    String
+  collegeId String
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  college College @relation(fields: [collegeId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@id([userId, collegeId])
+
+  @@map("saved_colleges")
+}

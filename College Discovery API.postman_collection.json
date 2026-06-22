@@ -1,0 +1,302 @@
+{
+  "info": {
+    "_postman_id": "5b407453-338d-4a37-b937-48f9faa31722",
+    "name": "College Discovery API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51853890",
+    "_collection_link": "https://go.postman.co/collection/51853890-5b407453-338d-4a37-b937-48f9faa31722?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "User Registration",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjJiMzIzYzEyY2M2OTk2NGFhYzczNSIsInVzZXJuYW1lIjoidGVzdDMiLCJpYXQiOjE3ODA2NTg5NzksImV4cCI6MTc4MDY1OTU3OX0.AGstTipIclFoyWUhId9FFQV1djlXBUlGq-A1hwyyYUc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"alok\",\r\n  \"email\": \"alok@gmail.com\",\r\n  \"password\": \"12345678\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User Login",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMjJiMzIzYzEyY2M2OTk2NGFhYzczNSIsInVzZXJuYW1lIjoidGVzdDMiLCJpYXQiOjE3ODA2NTg5NzksImV4cCI6MTc4MDY1OTU3OX0.AGstTipIclFoyWUhId9FFQV1djlXBUlGq-A1hwyyYUc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"alok@gmail.com\",\r\n  \"password\": \"12345678\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User me",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjbXFwZzFvZnMwMDAwa29ua245YXg5cjZhIiwiZW1haWwiOiJhbG9rQGdtYWlsLmNvbSIsImlhdCI6MTc4MjE0NjYwNiwiZXhwIjoxNzgyNzUxNDA2fQ.CQ4x6lyKNY4lOiLDKsfq5i0d6XU9HUETh3V0z7FIOAo",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/auth/me",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "auth",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Colleges",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/colleges?state=Telangana&sortBy=rating",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "colleges"
+          ],
+          "query": [
+            {
+              "key": "state",
+              "value": "Telangana",
+              "type": "text"
+            },
+            {
+              "key": "sortBy",
+              "value": "rating",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get College By Id",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/colleges/cmqo3nmt1000re8nkcr1r460q",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "colleges",
+            "cmqo3nmt1000re8nkcr1r460q"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Post saved Colleges",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjbXFvM25nMDEwMDAxZThua3J6a2l2YWlkIiwiZW1haWwiOiJjbG95ZF9iYXllcjE3QGhvdG1haWwuY29tIiwiaWF0IjoxNzgyMTQ3MjI0LCJleHAiOjE3ODI3NTIwMjR9.CgkjkwjsPfoAcBSX5JptNPB4FZqISqwQ-FNHuYRlmmA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"collegeId\": \"cmqo3nl2v000ke8nkjx6feipr\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/saved-colleges",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "saved-colleges"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Saved Colleges",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Delete a saved College",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjbXFvM25nMDEwMDAxZThua3J6a2l2YWlkIiwiZW1haWwiOiJjbG95ZF9iYXllcjE3QGhvdG1haWwuY29tIiwiaWF0IjoxNzgyMTQ3MjI0LCJleHAiOjE3ODI3NTIwMjR9.CgkjkwjsPfoAcBSX5JptNPB4FZqISqwQ-FNHuYRlmmA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"collegeId\": \"cmqo3nl2v000ke8nkjx6feipr\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/saved-colleges/cmqo3nl2v000ke8nkjx6feipr",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "saved-colleges",
+            "cmqo3nl2v000ke8nkjx6feipr"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Compare colleges",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjbXFvM25nMDEwMDAxZThua3J6a2l2YWlkIiwiZW1haWwiOiJjbG95ZF9iYXllcjE3QGhvdG1haWwuY29tIiwiaWF0IjoxNzgyMTQ3MjI0LCJleHAiOjE3ODI3NTIwMjR9.CgkjkwjsPfoAcBSX5JptNPB4FZqISqwQ-FNHuYRlmmA",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"collegeIds\": [\r\n    \"cmqo3np100010e8nkzg4mf4sr\",\r\n    \"cmqo3ntyt001ke8nkzn0fzrqg\"\r\n  ]\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/compare-colleges",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "compare-colleges"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
