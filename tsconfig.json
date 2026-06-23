@@ -28,6 +28,6 @@
     },
     "ignoreDeprecations": "6.0" 
   },
-  "include": ["src", "src/services/prisma"],
+  "include": ["src", "src/prisma"],
   "exclude": ["node_modules", "dist"]
 }
