@@ -11,7 +11,7 @@ export const swaggerSpec = swaggerJsdoc({
 
     servers: [
       {
-        url: "http://localhost:3000",
+        url: "https://internshipproject-production-975f.up.railway.app",
       },
     ],
 
