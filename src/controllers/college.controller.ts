@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import { collegeService } from "../services/college.service";
-import { ApiResponse } from "../utils/apiResponse";
+import { collegeService } from "../services/college.service.js";
+import { ApiResponse } from "../utils/apiResponse.js";
 
 export const getColleges = async (
   req: Request,
@@ -33,7 +33,7 @@ export const getCollegeById = async (
   try {
     const college =
       await collegeService.getCollegeById(
-        req.params.id
+        req.params.id as string
       );
 
     res.status(200).json(

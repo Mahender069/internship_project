@@ -3,7 +3,7 @@ import { Router } from "express";
 import {
   getColleges,
   getCollegeById,
-} from "../controllers/college.controller";
+} from "../controllers/college.controller.js";
 
 const router = Router();
 

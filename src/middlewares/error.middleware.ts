@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
-import { logger } from "../config/logger";
-import { ApiError } from "../utils/apiError";
-import { Prisma } from "../../prisma/generated/prisma/client";
+import { logger } from "../config/logger.js";
+import { ApiError } from "../utils/apiError.js";
+import { Prisma } from "@prisma/client";
 
 /**
  * Global Error Handler Middleware

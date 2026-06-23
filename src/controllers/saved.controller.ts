@@ -1,8 +1,8 @@
 import { Response, NextFunction } from "express";
-import { savedService } from "../services/saved.service";
-import { ApiResponse } from "../utils/apiResponse";
-import { AuthRequest } from "../middlewares/auth.middleware";
-import { ApiError } from "../utils/apiError";
+import { savedService } from "../services/saved.service.js";
+import { ApiResponse } from "../utils/apiResponse.js";
+import { AuthRequest } from "../middlewares/auth.middleware.js";
+import { ApiError } from "../utils/apiError.js";
 
 export const saveCollege = async (
   req: AuthRequest,
@@ -70,7 +70,7 @@ export const removeSavedCollege = async (
 
     await savedService.removeSavedCollege(
       req.user.userId,
-      collegeId
+      collegeId as string
     );
 
     res.status(200).json(

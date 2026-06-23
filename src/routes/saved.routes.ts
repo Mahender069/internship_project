@@ -4,9 +4,9 @@ import {
   saveCollege,
   getSavedColleges,
   removeSavedCollege,
-} from "../controllers/saved.controller";
+} from "../controllers/saved.controller.js";
 
-import { authMiddleware } from "../middlewares/auth.middleware";
+import { authMiddleware } from "../middlewares/auth.middleware.js";
 
 const router = Router();
 

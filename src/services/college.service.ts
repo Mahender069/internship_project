@@ -1,5 +1,5 @@
-import { collegeRepository } from "../repositories/college.repository";
-import { ApiError } from "../utils/apiError";
+import { collegeRepository } from "../repositories/college.repository.js";
+import { ApiError } from "../utils/apiError.js";
 
 export const collegeService = {
   async getColleges(query: any) {

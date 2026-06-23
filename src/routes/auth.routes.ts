@@ -1,15 +1,15 @@
 import { Router } from "express";
 
-import { register, login, getProfile } from "../controllers/auth.controller";
+import { register, login, getProfile } from "../controllers/auth.controller.js";
 
-import { validate } from "../middlewares/validate.middleware";
-import { authLimiter } from "../middlewares/rateLimit.middleware";
+import { validate } from "../middlewares/validate.middleware.js";
+import { authLimiter } from "../middlewares/rateLimit.middleware.js";
 
 import {
   registerSchema,
   loginSchema,
-} from "../validations/auth.validation";
-import { authMiddleware } from "../middlewares/auth.middleware";
+} from "../validations/auth.validation.js";
+import { authMiddleware } from "../middlewares/auth.middleware.js";
 
 const router = Router();
 

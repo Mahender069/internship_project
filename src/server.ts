@@ -1,21 +1,21 @@
 import express from "express";
 import cors from "cors";
 
-import { connectDB } from "./config/db";
-import { env } from "./config/env";
-import { logger } from "./config/logger";
+import { connectDB } from "./config/db.js";
+import { env } from "./config/env.js";
+import { logger } from "./config/logger.js";
 
-import { errorMiddleware } from "./middlewares/error.middleware";
-import { apiLimiter } from "./middlewares/rateLimit.middleware";
+import { errorMiddleware } from "./middlewares/error.middleware.js";
+import { apiLimiter } from "./middlewares/rateLimit.middleware.js";
 
 import swaggerUi from "swagger-ui-express";
-import { swaggerSpec } from "./config/swagger";
+import { swaggerSpec } from "./config/swagger.js";
 
-import authRoutes from "./routes/auth.routes";
-import collegeRoutes from "./routes/college.routes";
-import savedRoutes from "./routes/saved.routes";
-import compareRoutes from "./routes/compare.routes";
-import { ApiError } from "./utils/apiError";
+import authRoutes from "./routes/auth.routes.js";
+import collegeRoutes from "./routes/college.routes.js";
+import savedRoutes from "./routes/saved.routes.js";
+import compareRoutes from "./routes/compare.routes.js";
+import { ApiError } from "./utils/apiError.js";
 
 const app = express();
 

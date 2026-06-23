@@ -1,5 +1,5 @@
-import { savedRepository } from "../repositories/saved.repository";
-import { ApiError } from "../utils/apiError";
+import { savedRepository } from "../repositories/saved.repository.js";
+import { ApiError } from "../utils/apiError.js";
 
 export const savedService = {
   async saveCollege(userId: string, collegeId: string) {

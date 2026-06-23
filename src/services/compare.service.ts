@@ -1,5 +1,5 @@
-import { compareRepository } from "../repositories/compare.repository";
-import { ApiError } from "../utils/apiError";
+import { compareRepository } from "../repositories/compare.repository.js";
+import { ApiError } from "../utils/apiError.js";
 
 export const compareService = {
   async compareColleges(

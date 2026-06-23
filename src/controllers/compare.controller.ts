@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import { compareService } from "../services/compare.service";
-import { ApiResponse } from "../utils/apiResponse";
+import { compareService } from "../services/compare.service.js";
+import { ApiResponse } from "../utils/apiResponse.js";
 
 export const compareColleges = async (
   req: Request,

@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import { verifyToken } from "../utils/jwt";
-import { ApiError } from "../utils/apiError";
+import { verifyToken } from "../utils/jwt.js";
+import { ApiError } from "../utils/apiError.js";
 
 export interface AuthRequest extends Request {
   user?: {

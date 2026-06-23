@@ -4,14 +4,12 @@
 // Get a free hosted Postgres database in seconds: `npx create-db`
 
 generator client {
-  provider = "prisma-client"
-  output   = "./generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
 }
-
 
 model User {
   id       String @id @default(cuid())
@@ -35,11 +33,11 @@ model College {
   location String
   state    String
 
-  fees            Int
-  rating          Float
-  placementRate   Float
-  averagePackage  Int
-  description     String @db.Text
+  fees           Int
+  rating         Float
+  placementRate  Float
+  averagePackage Int
+  description    String @db.Text
 
   courses Course[]
   reviews Review[]
@@ -52,7 +50,6 @@ model College {
   @@index([state])
   @@index([rating])
   @@index([fees])
-
   @@map("colleges")
 }
 
@@ -70,14 +67,13 @@ model Course {
   updatedAt DateTime @updatedAt
 
   @@index([collegeId])
-
   @@map("courses")
 }
 
 model Review {
   id String @id @default(cuid())
 
-  rating Float
+  rating  Float
   comment String @db.Text
 
   userId    String
@@ -91,7 +87,6 @@ model Review {
 
   @@index([userId])
   @@index([collegeId])
-
   @@map("reviews")
 }
 
@@ -105,6 +100,5 @@ model SavedCollege {
   createdAt DateTime @default(now())
 
   @@id([userId, collegeId])
-
   @@map("saved_colleges")
 }

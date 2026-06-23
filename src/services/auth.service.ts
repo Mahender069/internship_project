@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
-import { authRepository } from "../repositories/auth.repository";
-import { ApiError } from "../utils/apiError";
-import { signToken } from "../utils/jwt";
+import { authRepository } from "../repositories/auth.repository.js";
+import { ApiError } from "../utils/apiError.js";
+import { signToken } from "../utils/jwt.js";
 
 export const authService = {
   async register(data: { name: string; email: string; password: string }) {

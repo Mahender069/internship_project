@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
-import { authService } from "../services/auth.service";
-import { ApiResponse } from "../utils/apiResponse";
-import { AuthRequest } from "../middlewares/auth.middleware";
+import { authService } from "../services/auth.service.js";
+import { ApiResponse } from "../utils/apiResponse.js";
+import { AuthRequest } from "../middlewares/auth.middleware.js";
 
 export const register = async (
   req: Request,
